@@ -38,7 +38,7 @@ document.getElementById('loginButton').addEventListener('click', function () {
 
                             alert('Login successful! Redirecting to the Loan Calculator...');
                             // Redirect to the loan calculator page
-                            window.location.href = 'http://127.0.0.1:5500/LoanApp.html';
+                            window.location.href = 'http://127.0.0.1:5500/index.html';
 
                         }
                         else {
