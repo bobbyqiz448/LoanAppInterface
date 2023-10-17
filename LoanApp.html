@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Loan Calculator</h1>
+        <form id="loanForm">
+            <div class="form-group">
+                <label for="amount">Amount to borrow:</label>
+                <input type="number" id="amount" required placeholder="20000">
+            </div>
+            <div class="form-group">
+                <label for="frequency">Payment frequency:</label>
+                <select id="frequency" required>
+                    <option value="annually">Annually</option>
+                    <option value="quarterly">Quarterly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="every6months">Every 6 Months</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="period">Loan period (in years):</label>
+                <input type="number" id="period" required placeholder="2">
+            </div>
+            <div class="form-group">
+                <label for="startDate">Start date:</label>
+                <input type="date" id="startDate" required placeholder="YYYY-MM-DD">
+            </div>
+            <div class="form-group">
+                <label for="bank">Bank:</label>
+                <select id="bank" required>
+                    <option value="A">Bank A</option>
+                    <option value="B">Bank B</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="interestType">Interest Type:</label>
+                <select id="interestType" required>
+                    <option value="flatRate">Flat Rate</option>
+                    <option value="reducingBalance">Reducing Balance</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required placeholder="example123@gmail.com">
+            </div>
+
+            <button type="submit" onclick="submitRequest()" id="calculateButton">Calculate</button>
+        </form>
+
+
+
+        <!-- The hidden div that only displays when response has been set  -->
+        <div id="results" class="hidden">
+
+            <div id="tableContainer">
+                <table>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Principal Amount</td>
+                        <td id="principleInTable"></td>
+                    </tr>
+                    <tr>
+                        <td>Frequency</td>
+                        <td id="frequencyInTable"></td>
+                    </tr>
+                    <tr>
+                        <td>Period</td>
+                        <td id="periodInTable"></td>
+                    </tr>
+                    <tr>
+                        <td>Start Date</td>
+                        <td id="startDateInTable"></td>
+                    </tr>
+                    <tr>
+                        <td>Interest Type</td>
+                        <td id="interestTypeInTable"></td>
+                    </tr>
+                    <tr>
+                        <td>Processing Fees</td>
+                        <td id="processingFees"></td>
+                    </tr>
+                    <tr>
+                        <td>Excise Duty</td>
+                        <td id="exciseDuty"></td>
+                    </tr>
+                    <tr>
+                        <td>Legal Fees</td>
+                        <td id="legalFees"></td>
+                    </tr>
+                    <tr>
+                        <td>Interest</td>
+                        <td id="interest"></td>
+                    </tr>
+                    <tr>
+                        <td>Installments</td>
+                        <td id="installments"></td>
+                    </tr>
+                </table>
+                <div id="table-buttons">
+                    <button onclick="printTable()" id="printBtn"> <span class="span">&#xf02f;</span> Print</button>
+                    <button onclick="shareViaEmail()" id="shareBtn"> <span class="span">&#xf0e0;</span> Share</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
